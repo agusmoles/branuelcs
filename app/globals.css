@@ -18,8 +18,13 @@ body {
 }
 
 body {
+  min-height: 100vh;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(252.44deg, var(--grey) 0%, var(--background) 100%);
+  background: linear-gradient(
+    252.44deg,
+    var(--grey) 0%,
+    var(--background) 100%
+  );
 }
 
 a {
