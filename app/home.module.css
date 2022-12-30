@@ -18,6 +18,17 @@
   position: absolute;
   bottom: 0;
   left: 40px;
+  z-index: -1;
+}
+
+.argFlag {
+  position: absolute;
+  top: -100px;
+  left: -190px;
+  mix-blend-mode: screen;
+  opacity: 0.2;
+  z-index: -1;
+  transform: rotate(-45deg);
 }
 
 .flares {
@@ -25,4 +36,61 @@
   bottom: 0;
   left: 0;
   mix-blend-mode: color-dodge;
+  z-index: -1;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 64px;
+  padding: 40px 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card {
+  width: 50%;
+  max-width: 400px;
+  background: var(--background);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sponsors {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  gap: 10px;
+  grid-template-columns: 320px 180px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  grid-template-areas:
+    "- csgofast"
+    "fastskins hellcase";
+}
+
+.hellcase {
+  grid-area: hellcase;
+}
+
+.csgofast {
+  grid-area: csgofast;
+}
+
+.fastskins {
+  grid-area: fastskins;
+}
+
+@media screen and (max-width: 768px) {
+  .branuelImage {
+    display: none;
+  }
 }
