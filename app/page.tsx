@@ -107,6 +107,24 @@ const GIVEAWAYS = [
     winner: "-",
     price: 30,
   },
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
+  },
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
+  },
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
+  },
 ];
 
 export default function Home() {
