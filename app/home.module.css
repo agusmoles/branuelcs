@@ -52,6 +52,19 @@
   gap: 15px;
 }
 
+.gcBadge {
+  background-image: url("/images/icons/ranked-21.svg");
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+
 .card {
   width: 50%;
   max-width: 400px;
@@ -72,8 +85,36 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  fill: #fff;
-  color: #fff;
+}
+
+.giveaways {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.giveaways > div:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.giveaways .winner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.giveaways .winner img {
+  justify-self: center;
+}
+
+.giveaways .winnerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .sponsors {

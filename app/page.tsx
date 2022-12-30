@@ -7,6 +7,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 const BACKGROUNDS = [
   {
+    className: styles.argFlag,
+    src: "/images/arg-flag.png",
+    alt: "Bandera argentina",
+    width: 800,
+    height: 475,
+  },
+  {
     className: styles.branuelImage,
     src: "/images/branuel.png",
     alt: "Branuel",
@@ -28,13 +35,6 @@ const BACKGROUNDS = [
     width: 1920,
     height: 1080,
   },
-  {
-    className: styles.argFlag,
-    src: "/images/arg-flag.png",
-    alt: "Bandera argentina",
-    width: 800,
-    height: 475,
-  },
 ];
 
 const SPONSORS = [
@@ -44,6 +44,7 @@ const SPONSORS = [
     alt: "CSGOFast",
     width: 182,
     height: 227,
+    link: "https://t.csgofast.cash/RsDA3v",
   },
   {
     className: styles.fastskins,
@@ -51,6 +52,7 @@ const SPONSORS = [
     alt: "Fastskins",
     width: 319,
     height: 111,
+    link: "https://farmskins.com/ref-branuel",
   },
   {
     className: styles.hellcase,
@@ -58,6 +60,7 @@ const SPONSORS = [
     alt: "Hellcase",
     width: 182,
     height: 324,
+    link: "https://hellca.se/branuelcs",
   },
 ];
 
@@ -65,14 +68,44 @@ const SOCIALS = [
   {
     src: "/images/icons/instagram.svg",
     alt: "Instagram",
+    href: "https://www.instagram.com/branuelcs/",
   },
   {
     src: "/images/icons/twitter.svg",
     alt: "Twitter",
+    href: "https://twitter.com/branuelcs",
   },
   {
     src: "/images/icons/youtube.svg",
     alt: "Youtube",
+    href: "https://www.youtube.com/channel/UC6ph2-J0_W-yALEU6MG8Ckg",
+  },
+];
+
+const GIVEAWAYS = [
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
+  },
+  {
+    src: "/images/skins/dk-printstream.webp",
+    skin: "Desert Eagle Printstream",
+    winner: "agusmoles",
+    price: 50,
+  },
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
+  },
+  {
+    src: "/images/skins/decimator.webp",
+    skin: "M4A1S Diezmador",
+    winner: "-",
+    price: 30,
   },
 ];
 
@@ -89,24 +122,67 @@ export default function Home() {
         <article className={`${styles.card} ${styles.personal}`}>
           <div className={inter.className}>Brandon</div>
           <div className={inter.className}>21 años</div>
-          <Image
-            src="/images/icons/arg-flag.svg"
-            alt="Bandera argentina"
-            width={20}
-            height={20}
-          />
 
           <div className={styles.social}>
-            {SOCIALS.map(({ alt, src }) => (
-              <Image key={src} alt={alt} width={20} height={20} src={src} />
+            <Image
+              src="/images/icons/arg-flag.svg"
+              alt="Bandera argentina"
+              width={20}
+              height={20}
+            />
+            <div className={styles.gcBadge}>
+              <a
+                className={inter.className}
+                href="https://gamersclub.com.br/player/900692"
+                target="_blank"
+                rel="noopenner noreferrer"
+              >
+                21
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.social}>
+            {SOCIALS.map(({ alt, src, href }) => (
+              <a
+                key={src}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image alt={alt} width={20} height={20} src={src} />
+              </a>
             ))}
           </div>
+        </article>
+
+        <article className={`${styles.card} ${styles.giveaways}`}>
+          <div className={inter.className}>SORTEOS</div>
+
+          {GIVEAWAYS.map(({ src, skin, winner, price }) => (
+            <div key={skin} className={styles.winner}>
+              <Image src={src} alt={skin} width={100} height={100} />
+              <div className={styles.winnerInfo}>
+                <div className={inter.className}>{skin}</div>
+                <div className={inter.className}>Ganador: {winner}</div>
+                <div className={inter.className}>Precio: {price}USD🤑</div>
+              </div>
+            </div>
+          ))}
         </article>
       </section>
 
       <section className={styles.sponsors}>
-        {SPONSORS.map(({ alt, ...sponsor }) => (
-          <Image key={sponsor.src} alt={alt} {...sponsor} />
+        {SPONSORS.map(({ alt, className, link, ...sponsor }) => (
+          <a
+            key={sponsor.src}
+            className={className}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image alt={alt} {...sponsor} />
+          </a>
         ))}
       </section>
     </div>
