@@ -61,6 +61,21 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  fill: #fff;
+  color: #fff;
+}
+
 .sponsors {
   position: absolute;
   right: 0;
