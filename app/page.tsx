@@ -84,42 +84,49 @@ const SOCIALS = [
 
 const GIVEAWAYS = [
   {
+    id: 1,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
     price: 30,
   },
   {
+    id: 2,
     src: "/images/skins/dk-printstream.webp",
     skin: "Desert Eagle Printstream",
     winner: "agusmoles",
     price: 50,
   },
   {
+    id: 3,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
     price: 30,
   },
   {
+    id: 4,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
     price: 30,
   },
   {
+    id: 5,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
     price: 30,
   },
   {
+    id: 6,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
     price: 30,
   },
   {
+    id: 7,
     src: "/images/skins/decimator.webp",
     skin: "M4A1S Diezmador",
     winner: "-",
@@ -177,8 +184,8 @@ export default function Home() {
         <article className={`${styles.card} ${styles.giveaways}`}>
           <div className={inter.className}>SORTEOS</div>
 
-          {GIVEAWAYS.map(({ src, skin, winner, price }) => (
-            <div key={skin} className={styles.winner}>
+          {GIVEAWAYS.map(({ id, src, skin, winner, price }) => (
+            <div key={id} className={styles.winner}>
               <Image src={src} alt={skin} width={100} height={100} />
               <div className={styles.winnerInfo}>
                 <div className={inter.className}>{skin}</div>
